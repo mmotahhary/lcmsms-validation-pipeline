@@ -1,0 +1,75 @@
+{
+  "project": {
+    "name"    : "LC-MS/MS Bioanalytical Validation Pipeline",
+    "version" : "1.0.0",
+    "author"  : "M. Motahhary"
+  },
+
+  "paths": {
+    "raw"      : "data/raw",
+    "processed": "data/processed",
+    "output"   : "data/output",
+    "reports"  : "reports",
+    "logs"     : "logs"
+  },
+
+  "assay": {
+    "analyte"             : "25-OH Vitamin D3",
+    "internal_standard"   : "d6-25-OH Vitamin D3",
+    "matrix"              : "Human Plasma",
+    "ionization"          : "ESI positive",
+    "quantitation"        : "MRM",
+    "column"              : "C18",
+    "retention_time_min"  : 2.8,
+    "rt_drift_window"     : 0.2
+  },
+
+  "calibration": {
+    "model"          : "1/x2",
+    "levels_ngml"    : [2.5, 5.0, 10.0, 25.0, 50.0, 75.0, 100.0],
+    "lloq_ngml"      : 2.5,
+    "uloq_ngml"      : 100.0,
+    "min_levels_pass": 6,
+    "r2_threshold"   : 0.99
+  },
+
+  "qc": {
+    "levels": {
+      "QC_LLOQ": 2.5,
+      "QC_Low" : 7.5,
+      "QC_Mid" : 40.0,
+      "QC_High": 80.0
+    },
+    "replicates_per_level"  : 3,
+    "accuracy_pct": {
+      "standard": 15.0,
+      "lloq"    : 20.0
+    },
+    "precision_cv_pct": {
+      "standard": 15.0,
+      "lloq"    : 20.0
+    },
+    "min_qc_pass_per_level": 2,
+    "min_qc_levels_pass"   : 3
+  },
+
+  "batch": {
+    "id_prefix"          : "BATCH",
+    "reinjection_allowed": true,
+    "max_reinjections"   : 1
+  },
+
+  "is_control": {
+    "cv_warning_pct": 15.0,
+    "cv_fail_pct"   : 25.0
+  },
+
+  "simulation": {
+    "n_unknowns"         : 10,
+    "peak_area_noise_cv" : 0.05,
+    "is_fluctuation_cv"  : 0.04,
+    "rt_drift_sd"        : 0.05,
+    "outlier_probability": 0.05,
+    "random_seed"        : 123
+  }
+}
