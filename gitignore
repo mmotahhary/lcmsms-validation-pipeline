@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.eggs/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Pipeline runtime files — generated on each run
+data/raw/
+data/processed/
+data/output/
+logs/
+reports/
+
+# Config — contains local paths
+config/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
